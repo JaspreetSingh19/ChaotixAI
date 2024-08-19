@@ -1,0 +1,14 @@
+.idea/*
+*.pyc
+media/
+ .idea
+venv/*
+/migrations/__pycache__/
+/__pycache__/
+/*.pyc
+/__pycache__/*.pyc
+__pycache__/
+*.env
+env/*
+.env
+db.sqlite3
