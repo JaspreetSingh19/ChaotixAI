@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generated Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .image-card img {
+            border-radius: 8px;
+            max-width: 200px;
+            max-height: 200px;
+            object-fit: cover;
+        }
+        .image-info {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .image-info p {
+            margin: 0;
+            font-size: 16px;
+            color: #555;
+        }
+        .image-info small {
+            display: block;
+            margin-top: 10px;
+            color: #888;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generated Images</h1>
+        {% if generated_images %}
+            {% for image_data in generated_images %}
+                <div class="image-card">
+                    <div class="image-info">
+                        <p><strong>Prompt:</strong> {{ image_data.prompt }}</p>
+                        <small>Created at: {{ image_data.created_at|date:"F j, Y, g:i a" }}</small>
+                    </div>
+                    <img src="{{ image_data.image_url }}" alt="Generated Image"/>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No images generated yet.</p>
+        {% endif %}
+    </div>
+</body>
+        <a class="back-link" href="{% url 'generate_images' %}">Back to Form</a>
+
+</html>
