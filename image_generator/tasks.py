@@ -20,8 +20,8 @@ def generate_image(prompt):
     :param prompt: prompt
     :return: generated images
     """
-    url = os.getenv('STABILITY_API')
     api_key = os.getenv('STABILITY_API_KEY')
+    url = os.getenv('STABILITY_API')
 
     headers = {
         "Authorization": f"Bearer {api_key}",

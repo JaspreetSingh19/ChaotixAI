@@ -12,9 +12,6 @@ ERROR_MESSAGES = {
     'prompts': {
         'required': 'PROMPTS_REQUIRED',
         'max_limit': 'MAX_LIMIT_EXCEEDED_3'
-    },
-    'common': {
-        'errors': 'CORRECT_THE_ERRORS'
     }
 }
 
