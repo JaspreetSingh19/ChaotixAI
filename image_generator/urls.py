@@ -6,7 +6,7 @@ It uses a DefaultRouter to generate views
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from image_generator.views import GeneratedImageViewSet
+from image_generator.views.generate_images import GeneratedImageViewSet
 
 router = DefaultRouter()
 
